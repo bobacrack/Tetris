@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public abstract class GameObject {
 
     protected int x, y;
@@ -9,6 +11,10 @@ public abstract class GameObject {
         this.y = y;
         this.id = id;
     }
+
+    public abstract void tick();
+    public abstract Rectangle getBounds();
+    public abstract void render(Graphics g);
 
     public int getX(){
         return x;
@@ -45,5 +51,5 @@ public abstract class GameObject {
     public void setVelY(int velY){
         this.velY = velY;
     }
-    
+
 }

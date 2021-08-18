@@ -1,3 +1,5 @@
+import org.w3c.dom.html.HTMLDOMImplementation;
+
 import java.awt.*;
 
 public class Game extends Canvas implements Runnable{
@@ -9,11 +11,15 @@ public class Game extends Canvas implements Runnable{
     private Thread gameThread;
     private boolean running = false;
 
+    private Handler handler;
     public Game(){
         //todo handler, keyinput, HUD??
-        ImageLoader loader = new ImageLoader();
-        
 
+        handler = new Handler();
+
+        ImageLoader loader = new ImageLoader();
+
+        new Window(WIDTH, HEIGHT, TITLE, this);
     }
 
     public synchronized void start(){
