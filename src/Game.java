@@ -4,8 +4,9 @@ import java.awt.*;
 
 public class Game extends Canvas implements Runnable{
 
-    public static final int WIDTH = 200;
-    public static final int HEIGHT = 500;
+    private static GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+    public static final int WIDTH = gd.getDisplayMode().getWidth() / 3;
+    public static final int HEIGHT = gd.getDisplayMode().getHeight() / 2;
     public static final String TITLE = "TETRIS";
 
     private Thread gameThread;
